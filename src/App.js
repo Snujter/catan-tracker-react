@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
-import Header from './Header';
+import NavBar from './NavBar';
 import Settlement from './Settlement';
 
 class App extends Component {
     render() {
         return (
             <div>
-                <Header />
+                <NavBar />
                 <div className="container">
                     <div className="text-center">
                         <Settlement />
