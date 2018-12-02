@@ -7,7 +7,7 @@ class Tile extends Component {
                 <img
                     src="https://dummyimage.com/80x80/000/fff"
                     alt="Tile"
-                    height="80"
+                    height="90"
                 />
                 <div className="tile-number">
                     <span><b>8</b></span>
