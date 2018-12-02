@@ -3,10 +3,16 @@ import React, {Component} from 'react';
 class Header extends Component {
     render() {
         return (
-            <div className="btn-group d-flex" role="group">
-                <button type="button" className="btn btn-default w-100">Settlements</button>
-                <button type="button" className="btn btn-default w-100">Chart</button>
-            </div>
+            <nav className="navbar navbar-expand navbar-dark fixed-top bg-dark py-0">
+                <ul className="navbar-nav w-100 nav-justified">
+                    <li className="nav-item d-flex flex-row">
+                        <a className="nav-link" href="#">Settlements</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Chart</a>
+                    </li>
+                </ul>
+            </nav>
         );
     }
 }
