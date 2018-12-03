@@ -11,18 +11,38 @@ library.add(faPlus)
 class App extends Component {
     state = {
         lastSettlementId: 0,
+        lastTileId: 0,
         settlements: [],
+        tiles: [],
     }
 
     addSettlement() {
         const settlements = this.state.settlements.slice();
         const newSettlementId = this.state.lastSettlementId + 1;
+
+        const tiles = this.state.tiles.slice();
+        let newTileId = this.state.lastTileId + 1;
+
+        let newTiles = [];
+        for (let i = 0; i < 3; i++) {
+            newTiles.push({
+                id: newTileId++,
+                settlementId: newSettlementId,
+                type: null,
+                number: null,
+            });
+        }
+
         this.setState({
+            lastSettlementId: newSettlementId,
+            lastTileId: newTileId,
+
             settlements: [{
                 id: newSettlementId,
                 isCity: false,
             }, ...settlements],
-            lastSettlementId: newSettlementId,
+
+            tiles: tiles.concat(newTiles)
         });
     }
 
@@ -36,7 +56,16 @@ class App extends Component {
         settlements[index].isCity = true;
 
         this.setState({ settlements });
-    }
+    };
+
+    handleTileModify = tile => {
+        const tiles = this.state.tiles.slice();
+        const index = tiles.indexOf(tile);
+        tiles[index].type = 'wheat';
+        tiles[index].number = 6;
+
+        this.setState({ tiles });
+    };
 
     getAddButton() {
         const settlementCount = this.state.settlements.filter(settlement => !settlement.isCity).length;
@@ -64,7 +93,9 @@ class App extends Component {
                             <Settlement
                                 key={settlement.id}
                                 settlement={settlement}
+                                tiles={this.state.tiles.filter(tile => (tile.settlementId === settlement.id))}
                                 onSettlementUpgrade={this.handleSettlementUpgrade}
+                                onTileModify={this.handleTileModify}
                             />
                         ))}
                     </div>

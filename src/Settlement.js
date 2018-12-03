@@ -23,7 +23,7 @@ class Settlement extends Component {
 
     render() {
         const img = this.getImage();
-        const { onSettlementUpgrade, settlement } = this.props;
+        const { settlement, tiles, onSettlementUpgrade, onTileModify } = this.props;
 
         return (
             <div>
@@ -35,15 +35,16 @@ class Settlement extends Component {
                 />
 
                 <div className="d-flex justify-content-center bd-highlight mb-3">
-                    <div className="p-2 bd-highlight">
-                        <Tile/>
-                    </div>
-                    <div className="p-2 bd-highlight">
-                        <Tile/>
-                    </div>
-                    <div className="p-2 bd-highlight">
-                        <Tile/>
-                    </div>
+                    {tiles.map(tile => {
+                        return (
+                            <div className="p-2 bd-highlight" key={tile.id}>
+                                <Tile
+                                    tile={tile}
+                                    onClick={() => onTileModify(tile)}
+                                />
+                            </div>
+                        );
+                    })}
                 </div>
             </div>
         );

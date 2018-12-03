@@ -8,22 +8,24 @@ import emptyHex from './images/empty-hex.png';
 
 class Tile extends Component {
     render() {
+        const { tile, onClick } = this.props;
+
         return (
-            <div className="tile" onClick={this.props.onClick}>
+            <div className="tile" onClick={onClick}>
                 <img
                     src={this.getImage()}
                     alt="Tile"
                     height="90"
                 />
                 <div className="tile-number">
-                    <span><b>{this.props.number}</b></span>
+                    <span><b>{tile.number}</b></span>
                 </div>
             </div>
         );
     }
 
     getImage() {
-        switch (this.props.type) {
+        switch (this.props.tile.type) {
             case 'brick':
                 return brickHex;
             case 'forest':
