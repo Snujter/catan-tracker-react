@@ -10,11 +10,13 @@ library.add(faPlus)
 
 class App extends Component {
     state = {
+        lastSettlementId: 0,
         settlements: [],
     }
 
     addSettlement() {
         const settlements = this.state.settlements.slice();
+        const newSettlementId = this.state.lastSettlementId + 1;
         this.setState({
             settlements: [{
                 id: newSettlementId,
