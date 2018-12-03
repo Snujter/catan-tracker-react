@@ -6,7 +6,7 @@ import cityImg from './images/city.png';
 
 class Settlement extends Component {
     getImage() {
-        if (this.props.isCity) {
+        if (this.props.settlement.isCity) {
             return {
                 src: cityImg,
                 alt: 'City',
@@ -23,10 +23,16 @@ class Settlement extends Component {
 
     render() {
         const img = this.getImage();
+        const { onSettlementUpgrade, settlement } = this.props;
 
         return (
             <div>
-                <img src={img.src} alt={img.alt} height={img.height}/>
+                <img
+                    src={img.src}
+                    alt={img.alt}
+                    height={img.height}
+                    onClick={() => onSettlementUpgrade(settlement)}
+                />
 
                 <div className="d-flex justify-content-center bd-highlight mb-3">
                     <div className="p-2 bd-highlight">

@@ -24,6 +24,14 @@ class App extends Component {
         });
     }
 
+    handleSettlementUpgrade = settlement => {
+        const settlements = this.state.settlements.slice();
+        const index = settlements.indexOf(settlement);
+        settlements[index].isCity = true;
+
+        this.setState({ settlements });
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -36,7 +44,11 @@ class App extends Component {
                             onClick={() => this.addSettlement()}
                         />
                         {this.state.settlements.map((settlement, i) => (
-                            <Settlement key={i} isCity={settlement.isCity}/>
+                            <Settlement
+                                key={i}
+                                settlement={settlement}
+                                onSettlementUpgrade={this.handleSettlementUpgrade}
+                            />
                         ))}
                     </div>
                 </main>
