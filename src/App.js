@@ -17,7 +17,6 @@ class App extends Component {
         const settlements = this.state.settlements.slice();
         this.setState({
             settlements: settlements.concat({
-                tiles: [],
             }),
         });
     }
@@ -26,7 +25,6 @@ class App extends Component {
         const settlements = this.state.settlements.map(settlement => {
             return (
                 <Settlement
-                    tiles={settlement.tiles}
                 />
             );
         });
