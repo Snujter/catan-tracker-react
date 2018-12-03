@@ -22,7 +22,7 @@ class Settlement extends Component {
     }
 
     render() {
-        let img = this.getImage();
+        const img = this.getImage();
 
         return (
             <div>
