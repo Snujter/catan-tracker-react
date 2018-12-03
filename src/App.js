@@ -23,13 +23,6 @@ class App extends Component {
     }
 
     render() {
-        const settlements = this.state.settlements.map(settlement => {
-            return (
-                <Settlement
-                />
-            );
-        });
-
         return (
             <React.Fragment>
                 <NavBar />
@@ -40,7 +33,9 @@ class App extends Component {
                             size="2x"
                             onClick={() => this.addSettlement()}
                         />
-                        {settlements}
+                        {this.state.settlements.map((settlement, i) => (
+                            <Settlement key={i} isCity={settlement.isCity}/>
+                        ))}
                     </div>
                 </main>
             </React.Fragment>
