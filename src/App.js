@@ -28,6 +28,10 @@ class App extends Component {
 
     handleSettlementUpgrade = settlement => {
         const settlements = this.state.settlements.slice();
+        const cityCount = settlements.filter(settlement => settlement.isCity).length;
+        if (cityCount === 4) {
+            return;
+        }
         const index = settlements.indexOf(settlement);
         settlements[index].isCity = true;
 
