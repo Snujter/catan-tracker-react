@@ -84,17 +84,19 @@ class App extends Component {
     }
 
     render() {
+        const { settlements, tiles } = this.state
+
         return (
             <React.Fragment>
                 <NavBar />
                 <main className="container">
                     <div className="text-center">
                         {this.getAddButton()}
-                        {this.state.settlements.map((settlement, i) => (
+                        {settlements.map((settlement, i) => (
                             <Settlement
                                 key={settlement.id}
                                 settlement={settlement}
-                                tiles={this.state.tiles.filter(tile => (tile.settlementId === settlement.id))}
+                                tiles={tiles.filter(tile => (tile.settlementId === settlement.id))}
                                 onSettlementUpgrade={this.handleSettlementUpgrade}
                                 onTileModify={this.handleTileModify}
                             />
