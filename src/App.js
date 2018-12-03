@@ -9,11 +9,8 @@ import Settlement from './Settlement';
 library.add(faPlus)
 
 class App extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            settlements: [],
-        }
+    state = {
+        settlements: [],
     }
 
     addSettlement() {
