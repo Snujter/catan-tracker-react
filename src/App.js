@@ -47,7 +47,7 @@ class App extends Component {
                         />
                         {this.state.settlements.map((settlement, i) => (
                             <Settlement
-                                key={i}
+                                key={settlement.id}
                                 settlement={settlement}
                                 onSettlementUpgrade={this.handleSettlementUpgrade}
                             />
