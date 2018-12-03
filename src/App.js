@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { Alert } from 'reactstrap';
 
 import NavBar from './NavBar';
 import Settlement from './Settlement';
@@ -70,7 +71,7 @@ class App extends Component {
     getAddButton() {
         const settlementCount = this.state.settlements.filter(settlement => !settlement.isCity).length;
         if (settlementCount === 5) {
-            return <div className="alert alert-info">Max number of settlements reached</div>;
+            return <Alert color="info">Max number of settlements reached</Alert>;
         }
 
         return (
