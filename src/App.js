@@ -6,6 +6,7 @@ import { Alert } from 'reactstrap';
 
 import NavBar from './NavBar';
 import Settlement from './Settlement';
+import TileModal from './TileModal';
 
 library.add(faPlus)
 
@@ -15,6 +16,7 @@ class App extends Component {
         lastTileId: 0,
         settlements: [],
         tiles: [],
+        showTileModal: true,
     }
 
     addSettlement() {
@@ -68,6 +70,10 @@ class App extends Component {
         this.setState({ tiles });
     };
 
+    toggleTileModal = () => {
+        this.setState({ showTileModal: !this.state.showTileModal });
+    };
+
     getAddButton() {
         const settlementCount = this.state.settlements.filter(settlement => !settlement.isCity).length;
         if (settlementCount === 5) {
@@ -89,6 +95,10 @@ class App extends Component {
         return (
             <React.Fragment>
                 <NavBar />
+                <TileModal
+                    isOpen={this.state.showTileModal}
+                    toggle={this.toggleTileModal}
+                />
                 <main className="container">
                     <div className="text-center">
                         {this.getAddButton()}
