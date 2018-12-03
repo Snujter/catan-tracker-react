@@ -17,6 +17,7 @@ class App extends Component {
         const settlements = this.state.settlements.slice();
         this.setState({
             settlements: settlements.concat({
+                isCity: false,
             }),
         });
     }
