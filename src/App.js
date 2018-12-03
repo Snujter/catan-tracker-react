@@ -16,9 +16,11 @@ class App extends Component {
     addSettlement() {
         const settlements = this.state.settlements.slice();
         this.setState({
-            settlements: settlements.concat({
+            settlements: [{
+                id: newSettlementId,
                 isCity: false,
-            }),
+            }, ...settlements],
+            lastSettlementId: newSettlementId,
         });
     }
 
