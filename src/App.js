@@ -38,17 +38,28 @@ class App extends Component {
         this.setState({ settlements });
     }
 
+    getAddButton() {
+        const settlementCount = this.state.settlements.filter(settlement => !settlement.isCity).length;
+        if (settlementCount === 5) {
+            return <div className="alert alert-info">Max number of settlements reached</div>;
+        }
+
+        return (
+            <FontAwesomeIcon
+                icon="plus"
+                size="2x"
+                onClick={() => this.addSettlement()}
+            />
+        );
+    }
+
     render() {
         return (
             <React.Fragment>
                 <NavBar />
                 <main className="container">
                     <div className="text-center">
-                        <FontAwesomeIcon
-                            icon="plus"
-                            size="2x"
-                            onClick={() => this.addSettlement()}
-                        />
+                        {this.getAddButton()}
                         {this.state.settlements.map((settlement, i) => (
                             <Settlement
                                 key={settlement.id}
