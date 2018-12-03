@@ -35,9 +35,9 @@ class App extends Component {
         });
 
         return (
-            <div>
+            <React.Fragment>
                 <NavBar />
-                <div className="container">
+                <main className="container">
                     <div className="text-center">
                         <FontAwesomeIcon
                             icon="plus"
@@ -46,8 +46,8 @@ class App extends Component {
                         />
                         {settlements}
                     </div>
-                </div>
-            </div>
+                </main>
+            </React.Fragment>
         );
     }
 }
