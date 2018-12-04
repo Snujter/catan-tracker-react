@@ -16,21 +16,22 @@ class App extends Component {
         lastTileId: 0,
         settlements: [],
         tiles: [],
-        showTileModal: true,
+        showTileModal: false,
         activeTile: {},
     }
 
+    // settlements
     addSettlement() {
         const settlements = this.state.settlements.slice();
         const newSettlementId = this.state.lastSettlementId + 1;
 
         const tiles = this.state.tiles.slice();
-        let newTileId = this.state.lastTileId + 1;
+        let newTileId = this.state.lastTileId;
 
         let newTiles = [];
         for (let i = 0; i < 3; i++) {
             newTiles.push({
-                id: newTileId++,
+                id: ++newTileId,
                 settlementId: newSettlementId,
                 type: null,
                 number: null,
@@ -50,29 +51,6 @@ class App extends Component {
         });
     }
 
-    handleSettlementUpgrade = settlement => {
-        const settlements = this.state.settlements.slice();
-        const cityCount = settlements.filter(settlement => settlement.isCity).length;
-        if (cityCount === 4) {
-            return;
-        }
-        const index = settlements.indexOf(settlement);
-        settlements[index].isCity = true;
-
-        this.setState({ settlements });
-    };
-
-    handleTileClick = tile => {
-        this.setState({
-            showTileModal: true,
-            activeTile: {...tile},
-        });
-    };
-
-    toggleTileModal = () => {
-        this.setState({ showTileModal: !this.state.showTileModal });
-    };
-
     getAddButton() {
         const settlementCount = this.state.settlements.filter(settlement => !settlement.isCity).length;
         if (settlementCount === 5) {
@@ -88,15 +66,61 @@ class App extends Component {
         );
     }
 
+    handleSettlementUpgrade = settlement => {
+        const settlements = this.state.settlements.slice();
+        const cityCount = settlements.filter(settlement => settlement.isCity).length;
+        if (cityCount === 4) {
+            return;
+        }
+        const index = settlements.indexOf(settlement);
+        settlements[index].isCity = true;
+
+        this.setState({ settlements });
+    };
+
+    // tiles
+    handleTileClick = tile => {
+        this.setState({
+            showTileModal: true,
+            activeTile: {...tile},
+        });
+    };
+
+    toggleTileModal = () => {
+        this.setState({
+            activeTile: {},
+            showTileModal: !this.state.showTileModal,
+        });
+    };
+
+    handleActiveTileUpdate = values => {
+        const activeTile = Object.assign({...this.state.activeTile}, values);
+        this.setState({ activeTile });
+    };
+
+    handleTileUpdate = () => {
+        const { tiles, activeTile} = this.state;
+        const newTiles = tiles.slice();
+        const index = newTiles.findIndex(tile => tile.id === activeTile.id);
+
+        tiles[index] = Object.assign(tiles[index], this.state.activeTile);
+
+        this.setState({ tiles });
+        this.toggleTileModal();
+    }
+
     render() {
-        const { settlements, tiles } = this.state
+        const { settlements, tiles, showTileModal, activeTile } = this.state
 
         return (
             <React.Fragment>
                 <NavBar />
                 <TileModal
-                    isOpen={this.state.showTileModal}
+                    isOpen={showTileModal}
                     toggle={this.toggleTileModal}
+                    tile={activeTile}
+                    onUpdate={this.handleActiveTileUpdate}
+                    onSave={this.handleTileUpdate}
                 />
                 <main className="container">
                     <div className="text-center">
