@@ -22,8 +22,22 @@ class Settlement extends Component {
     }
 
     render() {
-        const img = this.getImage();
         const { settlement, tiles, onUpgrade, onTileClick } = this.props;
+
+        let img;
+        if (settlement.isCity) {
+            img = {
+                src: cityImg,
+                alt: 'City',
+                height: 80,
+            };
+        } else {
+            img = {
+                src: settlementImg,
+                alt: 'Settlement',
+                height: 60,
+            };
+        }
 
         return (
             <div>
