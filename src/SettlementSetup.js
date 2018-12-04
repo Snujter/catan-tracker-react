@@ -5,15 +5,13 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { Alert } from 'reactstrap';
 import { Switch, Route } from 'react-router-dom'
 
-import SettlementSetup from './SettlementSetup';
-import Chart from './Chart';
 import NavBar from './NavBar';
 import Settlement from './Settlement';
 import TileModal from './TileModal';
 
 library.add(faPlus)
 
-class App extends Component {
+class SettlementSetup extends Component {
     state = {
         lastSettlementId: 0,
         lastTileId: 0,
@@ -117,18 +115,28 @@ class App extends Component {
 
         return (
             <React.Fragment>
-                <NavBar />
-                <main className="container">
-                    <div className="text-center">
-                        <Switch>
-                            <Route path='/setup' component={SettlementSetup}/>
-                            <Route path='/chart' component={Chart}/>
-                        </Switch>
-                    </div>
-                </main>
+                <TileModal
+                    isOpen={showTileModal}
+                    toggle={this.toggleTileModal}
+                    tile={activeTile}
+                    onUpdate={this.handleActiveTileUpdate}
+                    onSave={this.handleTileUpdate}
+                />
+                <div className="text-center">
+                    {this.getAddButton()}
+                    {settlements.map((settlement, i) => (
+                        <Settlement
+                            key={settlement.id}
+                            settlement={settlement}
+                            tiles={tiles.filter(tile => (tile.settlementId === settlement.id))}
+                            onSettlementUpgrade={this.handleSettlementUpgrade}
+                            onTileClick={this.handleTileClick}
+                        />
+                    ))}
+                </div>
             </React.Fragment>
         );
     }
 }
 
-export default App;
+export default SettlementSetup;
