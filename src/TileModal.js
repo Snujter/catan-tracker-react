@@ -7,6 +7,8 @@ import fieldHex from './images/field-hex.png';
 import rockHex from './images/rock-hex.png';
 import wheatHex from './images/wheat-hex.png';
 
+import TileImage from './TileImage';
+
 class TileModal extends Component {
     constructor(props) {
         super(props);
@@ -57,7 +59,7 @@ class TileModal extends Component {
 
                             return (
                                 <Button className={btnClasses} key={type} onClick={() => onUpdate({ type })}>
-                                    <Media src={types[type]} width="60" rounded="true" />
+                                    <TileImage type={type} height={70}/>
                                 </Button>
                             );
                         })}
