@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import Tile from './Tile';
-
 import settlementImg from './images/settlement.png';
 import cityImg from './images/city.png';
 
