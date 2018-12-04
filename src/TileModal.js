@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Media, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import brickHex from './images/brick-hex.png';
 import forestHex from './images/forest-hex.png';

@@ -3,9 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { Alert } from 'reactstrap';
-import { Switch, Route } from 'react-router-dom'
 
-import NavBar from './NavBar';
 import Settlement from './Settlement';
 import TileModal from './TileModal';
 
