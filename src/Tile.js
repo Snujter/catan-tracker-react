@@ -1,10 +1,5 @@
 import React, {Component} from 'react';
-import brickHex from './images/brick-hex.png';
-import forestHex from './images/forest-hex.png';
-import fieldHex from './images/field-hex.png';
-import rockHex from './images/rock-hex.png';
-import wheatHex from './images/wheat-hex.png';
-import emptyHex from './images/empty-hex.png';
+import TileImage from './TileImage';
 
 class Tile extends Component {
     render() {
@@ -12,33 +7,12 @@ class Tile extends Component {
 
         return (
             <div className="tile" onClick={onClick}>
-                <img
-                    src={this.getImage()}
-                    alt="Tile"
-                    height="90"
-                />
+                <TileImage type={tile.type}/>
                 <div className="tile-number">
                     <span><b>{tile.number}</b></span>
                 </div>
             </div>
         );
-    }
-
-    getImage() {
-        switch (this.props.tile.type) {
-            case 'brick':
-                return brickHex;
-            case 'forest':
-                return forestHex;
-            case 'field':
-                return fieldHex;
-            case 'rock':
-                return rockHex;
-            case 'wheat':
-                return wheatHex;
-            default:
-                return emptyHex;
-        }
     }
 }
 
