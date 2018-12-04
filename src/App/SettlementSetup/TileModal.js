@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { numbers, types } from './immutables';
+import { numbers, types } from '../../immutables';
 
-import TileImage from './TileImage';
+import TileImage from '../components/TileImage';
 
 class TileModal extends Component {
     render() {

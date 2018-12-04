@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import { types } from './immutables';
-import emptyHex from './images/empty-hex.png';
+import { types } from '../../immutables';
+import emptyHex from '../../images/empty-hex.png';
 
 class TileImage extends Component {
     render() {

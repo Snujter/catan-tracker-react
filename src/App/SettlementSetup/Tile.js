@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import TileImage from './TileImage';
+import TileImage from '../components/TileImage';
 
 class Tile extends Component {
     render() {
