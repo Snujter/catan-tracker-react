@@ -24,7 +24,7 @@ class App extends Component {
     }
 
     // settlements
-    addSettlement() {
+    handleSettlementAdd = () => {
         const settlements = this.state.settlements.slice();
         const newSettlementId = this.state.lastSettlementId + 1;
 
@@ -52,22 +52,7 @@ class App extends Component {
 
             tiles: tiles.concat(newTiles)
         });
-    }
-
-    getAddButton() {
-        const settlementCount = this.state.settlements.filter(settlement => !settlement.isCity).length;
-        if (settlementCount === 5) {
-            return <Alert color="info">Max number of settlements reached</Alert>;
-        }
-
-        return (
-            <FontAwesomeIcon
-                icon="plus"
-                size="2x"
-                onClick={() => this.addSettlement()}
-            />
-        );
-    }
+    };
 
     handleSettlementUpgrade = settlement => {
         const settlements = this.state.settlements.slice();
@@ -82,38 +67,20 @@ class App extends Component {
     };
 
     // tiles
-    handleTileClick = tile => {
-        this.setState({
-            showTileModal: true,
-            activeTile: {...tile},
-        });
-    };
+    handleTileUpdate = (newTile) => {
+        console.log(newTile);
 
-    toggleTileModal = () => {
-        this.setState({
-            activeTile: {},
-            showTileModal: !this.state.showTileModal,
-        });
-    };
-
-    handleActiveTileUpdate = values => {
-        const activeTile = Object.assign({...this.state.activeTile}, values);
-        this.setState({ activeTile });
-    };
-
-    handleTileUpdate = () => {
-        const { tiles, activeTile} = this.state;
+        const { tiles } = this.state;
         const newTiles = tiles.slice();
-        const index = newTiles.findIndex(tile => tile.id === activeTile.id);
+        const index = newTiles.findIndex(tile => tile.id === newTile.id);
 
-        tiles[index] = Object.assign(tiles[index], this.state.activeTile);
+        newTiles[index] = Object.assign(newTiles[index], newTile);
 
-        this.setState({ tiles });
-        this.toggleTileModal();
+        this.setState({ tiles: newTiles });
     }
 
     render() {
-        const { settlements, tiles, showTileModal, activeTile } = this.state
+        const { settlements, tiles } = this.state;
 
         return (
             <React.Fragment>
@@ -121,7 +88,19 @@ class App extends Component {
                 <main className="container">
                     <div className="text-center">
                         <Switch>
-                            <Route path="/setup" component={SettlementSetup}/>
+                            <Route
+                                path="/setup"
+                                render={(props) => (
+                                    <SettlementSetup
+                                        {...props}
+                                        settlements={settlements}
+                                        tiles={tiles}
+                                        onSettlementAdd={this.handleSettlementAdd}
+                                        onSettlementUpgrade={this.handleSettlementUpgrade}
+                                        onTileUpdate={this.handleTileUpdate}
+                                    />
+                                )}
+                            />
                             <Route path="/chart" component={Chart}/>
                             <Redirect from="/" to="/setup" />
                         </Switch>

@@ -13,47 +13,15 @@ library.add(faPlus)
 
 class SettlementSetup extends Component {
     state = {
-        lastSettlementId: 0,
-        lastTileId: 0,
-        settlements: [],
-        tiles: [],
         showTileModal: false,
         activeTile: {},
     }
 
     // settlements
-    addSettlement() {
-        const settlements = this.state.settlements.slice();
-        const newSettlementId = this.state.lastSettlementId + 1;
-
-        const tiles = this.state.tiles.slice();
-        let newTileId = this.state.lastTileId;
-
-        let newTiles = [];
-        for (let i = 0; i < 3; i++) {
-            newTiles.push({
-                id: ++newTileId,
-                settlementId: newSettlementId,
-                type: null,
-                number: null,
-            });
-        }
-
-        this.setState({
-            lastSettlementId: newSettlementId,
-            lastTileId: newTileId,
-
-            settlements: [{
-                id: newSettlementId,
-                isCity: false,
-            }, ...settlements],
-
-            tiles: tiles.concat(newTiles)
-        });
-    }
-
     getAddButton() {
-        const settlementCount = this.state.settlements.filter(settlement => !settlement.isCity).length;
+        const { settlements, onSettlementAdd } = this.props;
+
+        const settlementCount = settlements.filter(settlement => !settlement.isCity).length;
         if (settlementCount === 5) {
             return <Alert color="info">Max number of settlements reached</Alert>;
         }
@@ -62,22 +30,10 @@ class SettlementSetup extends Component {
             <FontAwesomeIcon
                 icon="plus"
                 size="2x"
-                onClick={() => this.addSettlement()}
+                onClick={() => onSettlementAdd()}
             />
         );
     }
-
-    handleSettlementUpgrade = settlement => {
-        const settlements = this.state.settlements.slice();
-        const cityCount = settlements.filter(settlement => settlement.isCity).length;
-        if (cityCount === 4) {
-            return;
-        }
-        const index = settlements.indexOf(settlement);
-        settlements[index].isCity = true;
-
-        this.setState({ settlements });
-    };
 
     // tiles
     handleTileClick = tile => {
@@ -99,28 +55,23 @@ class SettlementSetup extends Component {
         this.setState({ activeTile });
     };
 
-    handleTileUpdate = () => {
-        const { tiles, activeTile} = this.state;
-        const newTiles = tiles.slice();
-        const index = newTiles.findIndex(tile => tile.id === activeTile.id);
-
-        tiles[index] = Object.assign(tiles[index], this.state.activeTile);
-
-        this.setState({ tiles });
+    handleSave = () => {
+        this.props.onTileUpdate(this.state.activeTile);
         this.toggleTileModal();
     }
 
     render() {
-        const { settlements, tiles, showTileModal, activeTile } = this.state
+        const { settlements, tiles, onSettlementUpgrade, onTileUpdate } = this.props;
+        const { showTileModal, activeTile } = this.state;
 
         return (
             <React.Fragment>
                 <TileModal
                     isOpen={showTileModal}
-                    toggle={this.toggleTileModal}
                     tile={activeTile}
+                    toggle={this.toggleTileModal}
                     onUpdate={this.handleActiveTileUpdate}
-                    onSave={this.handleTileUpdate}
+                    onSave={this.handleSave}
                 />
                 <div className="text-center">
                     {this.getAddButton()}
@@ -129,7 +80,7 @@ class SettlementSetup extends Component {
                             key={settlement.id}
                             settlement={settlement}
                             tiles={tiles.filter(tile => (tile.settlementId === settlement.id))}
-                            onSettlementUpgrade={this.handleSettlementUpgrade}
+                            onUpgrade={onSettlementUpgrade}
                             onTileClick={this.handleTileClick}
                         />
                     ))}

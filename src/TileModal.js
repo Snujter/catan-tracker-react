@@ -67,7 +67,7 @@ class TileModal extends Component {
                 </ModalBody>
                 <ModalFooter className="d-flex justify-content-between">
                     <Button color="secondary" onClick={toggle}>Cancel</Button>
-                    <Button color="primary" onClick={onSave}>Done</Button>
+                    <Button color="primary" onClick={() => onSave(tile)}>Done</Button>
                 </ModalFooter>
             </Modal>
         );

@@ -23,7 +23,7 @@ class Settlement extends Component {
 
     render() {
         const img = this.getImage();
-        const { settlement, tiles, onSettlementUpgrade, onTileClick } = this.props;
+        const { settlement, tiles, onUpgrade, onTileClick } = this.props;
 
         return (
             <div>
@@ -31,7 +31,7 @@ class Settlement extends Component {
                     src={img.src}
                     alt={img.alt}
                     height={img.height}
-                    onClick={() => onSettlementUpgrade(settlement)}
+                    onClick={() => onUpgrade(settlement)}
                 />
 
                 <div className="d-flex justify-content-center bd-highlight mb-3">
