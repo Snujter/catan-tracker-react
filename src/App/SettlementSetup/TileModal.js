@@ -3,6 +3,7 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { numbers, types } from '../../immutables';
 
 import TileImage from '../components/TileImage';
+import NumberButton from '../components/NumberButton';
 
 class TileModal extends Component {
     render() {
@@ -14,19 +15,17 @@ class TileModal extends Component {
                 <ModalBody>
                     <div className="d-flex justify-content-center flex-wrap mb-5">
                         {numbers.map((number, i) => {
-                            let btnClasses = "btn-round p-2 m-2";
-                            btnClasses += (number === tile.number) ?
+                            const extraClasses = (number === tile.number) ?
                                 " bg-dark text-light" :
                                 " bg-light text-dark";
 
                             return (
-                                <Button
-                                    className={btnClasses}
+                                <NumberButton
                                     key={i}
+                                    number={number}
+                                    extraClasses={extraClasses}
                                     onClick={() => onUpdate({ number })}
-                                >
-                                    {number}
-                                </Button>
+                                />
                             );
                         })}
                     </div>
