@@ -59,7 +59,7 @@ class SettlementSetup extends Component {
     }
 
     render() {
-        const { settlements, tiles, onSettlementUpgrade, onTileUpdate } = this.props;
+        const { settlements, tiles, onSettlementUpgrade } = this.props;
         const { showTileModal, activeTile } = this.state;
 
         return (

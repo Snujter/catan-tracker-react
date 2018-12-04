@@ -64,8 +64,6 @@ class App extends Component {
 
     // tiles
     handleTileUpdate = (newTile) => {
-        console.log(newTile);
-
         const { tiles } = this.state;
         const newTiles = tiles.slice();
         const index = newTiles.findIndex(tile => tile.id === newTile.id);
