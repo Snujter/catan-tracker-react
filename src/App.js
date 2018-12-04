@@ -3,7 +3,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { Alert } from 'reactstrap';
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import SettlementSetup from './SettlementSetup';
 import Chart from './Chart';
@@ -121,8 +121,9 @@ class App extends Component {
                 <main className="container">
                     <div className="text-center">
                         <Switch>
-                            <Route path='/setup' component={SettlementSetup}/>
-                            <Route path='/chart' component={Chart}/>
+                            <Route path="/setup" component={SettlementSetup}/>
+                            <Route path="/chart" component={Chart}/>
+                            <Redirect from="/" to="/setup" />
                         </Switch>
                     </div>
                 </main>
