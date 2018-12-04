@@ -17,6 +17,7 @@ class App extends Component {
         settlements: [],
         tiles: [],
         showTileModal: true,
+        activeTile: {},
     }
 
     addSettlement() {
@@ -61,13 +62,11 @@ class App extends Component {
         this.setState({ settlements });
     };
 
-    handleTileModify = tile => {
-        const tiles = this.state.tiles.slice();
-        const index = tiles.indexOf(tile);
-        tiles[index].type = 'wheat';
-        tiles[index].number = 6;
-
-        this.setState({ tiles });
+    handleTileClick = tile => {
+        this.setState({
+            showTileModal: true,
+            activeTile: {...tile},
+        });
     };
 
     toggleTileModal = () => {
@@ -108,7 +107,7 @@ class App extends Component {
                                 settlement={settlement}
                                 tiles={tiles.filter(tile => (tile.settlementId === settlement.id))}
                                 onSettlementUpgrade={this.handleSettlementUpgrade}
-                                onTileModify={this.handleTileModify}
+                                onTileClick={this.handleTileClick}
                             />
                         ))}
                     </div>

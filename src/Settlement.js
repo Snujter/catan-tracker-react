@@ -23,7 +23,7 @@ class Settlement extends Component {
 
     render() {
         const img = this.getImage();
-        const { settlement, tiles, onSettlementUpgrade, onTileModify } = this.props;
+        const { settlement, tiles, onSettlementUpgrade, onTileClick } = this.props;
 
         return (
             <div>
@@ -40,7 +40,7 @@ class Settlement extends Component {
                             <div className="p-2 bd-highlight" key={tile.id}>
                                 <Tile
                                     tile={tile}
-                                    onClick={() => onTileModify(tile)}
+                                    onClick={() => onTileClick(tile)}
                                 />
                             </div>
                         );
