@@ -75,7 +75,7 @@ class App extends Component {
         newTiles[index] = Object.assign(newTiles[index], newTile);
 
         this.setState({ tiles: newTiles });
-    }
+    };
 
     render() {
         const { settlements, tiles } = this.state;
@@ -99,7 +99,16 @@ class App extends Component {
                                     />
                                 )}
                             />
-                            <Route path="/chart" component={Chart}/>
+                            <Route
+                                path="/chart"
+                                render={(props) => (
+                                    <Chart
+                                        {...props}
+                                        settlements={settlements}
+                                        tiles={tiles.filter(tile => tile.type !== "empty")}
+                                    />
+                                )}
+                            />
                             <Redirect from="/" to="/setup" />
                         </Switch>
                     </div>
