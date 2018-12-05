@@ -4,8 +4,8 @@ import fieldHex from './images/field-hex.png';
 import rockHex from './images/rock-hex.png';
 import wheatHex from './images/wheat-hex.png';
 
-const numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const types = {
+const availableRolls = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+const availableTypes = {
     'brick': brickHex,
     'field': fieldHex,
     'forest': forestHex,
@@ -13,4 +13,4 @@ const types = {
     'wheat': wheatHex,
 }
 
-export { numbers, types };
+export { availableRolls, availableTypes };

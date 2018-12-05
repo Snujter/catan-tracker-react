@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { types } from '../../immutables';
+import { availableTypes } from '../../immutables';
 import emptyHex from '../../images/empty-hex.png';
 
 class TileImage extends Component {
@@ -8,7 +8,7 @@ class TileImage extends Component {
 
         return (
             <img
-                src={types[type] || emptyHex}
+                src={availableTypes[type] || emptyHex}
                 alt={alt || 'Tile'}
                 height={height || 90}
             />
