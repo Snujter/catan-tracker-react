@@ -3,13 +3,13 @@ import TileImage from '../components/TileImage';
 
 class Tile extends Component {
     render() {
-        const { tile, onClick } = this.props;
+        const { type, number, onClick } = this.props;
 
         return (
             <div className="tile" onClick={onClick}>
-                <TileImage type={tile.type}/>
+                <TileImage type={type}/>
                 <div className="tile-number">
-                    <span><b>{tile.number}</b></span>
+                    <span><b>{number}</b></span>
                 </div>
             </div>
         );

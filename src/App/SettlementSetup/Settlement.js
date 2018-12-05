@@ -36,7 +36,8 @@ class Settlement extends Component {
                         return (
                             <div className="p-2 bd-highlight" key={tile.id}>
                                 <Tile
-                                    tile={tile}
+                                    type={tile.type}
+                                    number={tile.number}
                                     onClick={() => onTileClick(tile)}
                                 />
                             </div>
