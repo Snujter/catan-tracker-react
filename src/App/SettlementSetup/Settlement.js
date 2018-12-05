@@ -4,22 +4,6 @@ import settlementImg from '../../images/settlement.png';
 import cityImg from '../../images/city.png';
 
 class Settlement extends Component {
-    getImage() {
-        if (this.props.settlement.isCity) {
-            return {
-                src: cityImg,
-                alt: 'City',
-                height: 80,
-            }
-        } else {
-            return {
-                src: settlementImg,
-                alt: 'Settlement',
-                height: 60,
-            }
-        }
-    }
-
     render() {
         const { settlement, tiles, onUpgrade, onTileClick } = this.props;
 

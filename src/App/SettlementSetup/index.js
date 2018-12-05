@@ -48,12 +48,17 @@ class SettlementSetup extends Component {
         });
     };
 
-    handleActiveTileUpdate = values => {
-        const activeTile = Object.assign({...this.state.activeTile}, values);
+    handleActiveTileNumberUpdate = number => {
+        const activeTile = Object.assign({...this.state.activeTile}, { number });
         this.setState({ activeTile });
     };
 
-    handleSave = () => {
+    handleActiveTileTypeUpdate = type => {
+        const activeTile = Object.assign({...this.state.activeTile}, { type });
+        this.setState({ activeTile });
+    };
+
+    handleTileSave = () => {
         this.props.onTileUpdate(this.state.activeTile);
         this.toggleTileModal();
     }
@@ -68,8 +73,9 @@ class SettlementSetup extends Component {
                     isOpen={showTileModal}
                     tile={activeTile}
                     toggle={this.toggleTileModal}
-                    onUpdate={this.handleActiveTileUpdate}
-                    onSave={this.handleSave}
+                    onUpdateNumber={this.handleActiveTileNumberUpdate}
+                    onUpdateType={this.handleActiveTileTypeUpdate}
+                    onSave={this.handleTileSave}
                 />
                 <div className="text-center">
                     {this.getAddButton()}

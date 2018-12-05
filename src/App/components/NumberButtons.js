@@ -17,7 +17,7 @@ class NumberButtons extends Component {
                             key={i}
                             number={number}
                             extraClasses={extraClasses}
-                            onClick={() => onButtonClick({ number })}
+                            onClick={() => onButtonClick(number)}
                         />
                     );
                 })}

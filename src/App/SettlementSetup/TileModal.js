@@ -7,7 +7,7 @@ import NumberButtons from '../components/NumberButtons';
 
 class TileModal extends Component {
     render() {
-        const { tile, isOpen, toggle, onUpdate, onSave } = this.props;
+        const { tile, isOpen, toggle, onUpdateNumber, onUpdateType, onSave } = this.props;
 
         return (
             <Modal isOpen={isOpen}>
@@ -17,7 +17,7 @@ class TileModal extends Component {
                         className="d-flex justify-content-center flex-wrap mb-5"
                         numbers={numbers}
                         selectedNumber={tile.number}
-                        onButtonClick={onUpdate}
+                        onButtonClick={onUpdateNumber}
                     />
                     <div className="d-flex justify-content-center flex-wrap">
                         {Object.keys(types).map(function(type) {
@@ -27,7 +27,7 @@ class TileModal extends Component {
                                 " bg-light text-dark";
 
                             return (
-                                <Button className={btnClasses} key={type} onClick={() => onUpdate({ type })}>
+                                <Button className={btnClasses} key={type} onClick={() => onUpdateType(type)}>
                                     <TileImage type={type} height={70}/>
                                 </Button>
                             );
