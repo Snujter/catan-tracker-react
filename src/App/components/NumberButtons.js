@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import NumberButton from '../components/NumberButton';
+import { availableRolls } from '../../immutables';
 
 class NumberButtons extends Component {
     render() {
@@ -7,7 +8,7 @@ class NumberButtons extends Component {
 
         return (
             <div className={className}>
-                {numbers.map((number, i) => {
+                {(numbers || availableRolls).map((number, i) => {
                     const extraClasses = (number === selectedNumber) ?
                         " bg-dark text-light" :
                         " bg-light text-dark";

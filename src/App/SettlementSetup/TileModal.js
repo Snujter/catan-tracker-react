@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { availableRolls, availableTypes } from '../../immutables';
+import { availableTypes } from '../../immutables';
 
 import TileImage from '../components/TileImage';
 import NumberButtons from '../components/NumberButtons';
@@ -15,7 +15,6 @@ class TileModal extends Component {
                 <ModalBody>
                     <NumberButtons
                         className="d-flex justify-content-center flex-wrap mb-5"
-                        numbers={availableRolls}
                         selectedNumber={tile.number}
                         onButtonClick={onUpdateNumber}
                     />
