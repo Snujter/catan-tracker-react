@@ -55,7 +55,7 @@ class Chart extends Component {
         )
     }
 
-    calculateResourcesForRolls() {
+    calculateResourcesForRolls = () => {
         const { settlements, tiles } = this.props;
 
         return tiles.reduce((resources, tile) => {
