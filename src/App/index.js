@@ -64,7 +64,7 @@ class App extends Component {
 
     // tiles
     handleTileUpdate = newTile => {
-        if (!newTile.type || !newTile.number) {
+        if ((newTile.type && !newTile.number) || (!newTile.type && newTile.number)) {
             return;
         }
 

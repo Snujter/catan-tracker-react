@@ -49,6 +49,14 @@ class SettlementSetup extends Component {
         });
     };
 
+    handleActiveTileReset = () => {
+        const activeTile = Object.assign({...this.state.activeTile}, {
+            number: null,
+            type: null,
+        });
+        this.setState({ activeTile });
+    };
+
     handleActiveTileNumberUpdate = number => {
         const activeTile = Object.assign({...this.state.activeTile}, { number });
         this.setState({ activeTile });
@@ -77,6 +85,7 @@ class SettlementSetup extends Component {
                     onUpdateNumber={this.handleActiveTileNumberUpdate}
                     onUpdateType={this.handleActiveTileTypeUpdate}
                     onSave={this.handleTileSave}
+                    onReset={this.handleActiveTileReset}
                 />
                 <div>
                     {this.getAddButton()}

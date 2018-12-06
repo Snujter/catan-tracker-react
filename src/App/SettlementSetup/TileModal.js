@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { availableTypes } from '../../immutables';
 
 import TileImage from '../components/TileImage';
@@ -8,7 +8,7 @@ import AppButton from '../components/AppButton';
 
 class TileModal extends Component {
     render() {
-        const { tile, isOpen, toggle, onUpdateNumber, onUpdateType, onSave } = this.props;
+        const { tile, isOpen, toggle, onUpdateNumber, onUpdateType, onSave, onReset } = this.props;
 
         return (
             <Modal isOpen={isOpen}>
@@ -34,8 +34,9 @@ class TileModal extends Component {
                     </div>
                 </ModalBody>
                 <ModalFooter className="d-flex justify-content-between">
-                    <Button color="secondary" onClick={toggle}>Cancel</Button>
-                    <Button color="primary" onClick={() => onSave(tile)}>Done</Button>
+                    <AppButton onClick={toggle}>Cancel</AppButton>
+                    <AppButton color="info" onClick={onReset}>Reset</AppButton>
+                    <AppButton outline color="success" onClick={() => onSave(tile)}>Done</AppButton>
                 </ModalFooter>
             </Modal>
         );
