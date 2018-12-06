@@ -13,7 +13,7 @@ class SettlementSetup extends Component {
     state = {
         showTileModal: false,
         activeTile: {},
-    }
+    };
 
     // settlements
     getAddButton() {
@@ -78,7 +78,7 @@ class SettlementSetup extends Component {
                     onUpdateType={this.handleActiveTileTypeUpdate}
                     onSave={this.handleTileSave}
                 />
-                <div className="text-center">
+                <div>
                     {this.getAddButton()}
                     {settlements.map((settlement, i) => (
                         <Settlement
