@@ -17,7 +17,7 @@ class App extends Component {
         tiles: [],
         showTileModal: false,
         activeTile: {},
-    }
+    };
 
     // settlements
     handleSettlementAdd = () => {
@@ -88,7 +88,6 @@ class App extends Component {
                         <Switch>
                             <Route
                                 path="/setup"
-                                activeClassName='active'
                                 render={(props) => (
                                     <SettlementSetup
                                         {...props}
@@ -102,7 +101,6 @@ class App extends Component {
                             />
                             <Route
                                 path="/chart"
-                                activeClassName='active'
                                 render={(props) => (
                                     <Chart
                                         {...props}
