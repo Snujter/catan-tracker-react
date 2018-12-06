@@ -8,7 +8,7 @@ import AppButton from '../components/AppButton';
 
 class TileModal extends Component {
     render() {
-        const { tile, isOpen, toggle, onUpdateNumber, onUpdateType, onSave, onReset } = this.props;
+        const { tile, isOpen, toggle, onUpdateNumber, onUpdateType, onSave, onClear } = this.props;
 
         return (
             <Modal isOpen={isOpen}>
@@ -35,7 +35,7 @@ class TileModal extends Component {
                 </ModalBody>
                 <ModalFooter className="d-flex justify-content-between">
                     <AppButton onClick={toggle}>Cancel</AppButton>
-                    <AppButton color="info" onClick={onReset}>Reset</AppButton>
+                    <AppButton color="info" onClick={onClear}>Clear</AppButton>
                     <AppButton outline color="success" onClick={() => onSave(tile)}>Done</AppButton>
                 </ModalFooter>
             </Modal>
