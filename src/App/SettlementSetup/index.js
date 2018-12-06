@@ -65,7 +65,7 @@ class SettlementSetup extends Component {
     }
 
     render() {
-        const { settlements, tiles, onSettlementUpgrade } = this.props;
+        const { settlements, tiles, onSettlementUpdate } = this.props;
         const { showTileModal, activeTile } = this.state;
 
         return (
@@ -85,7 +85,7 @@ class SettlementSetup extends Component {
                             key={settlement.id}
                             settlement={settlement}
                             tiles={tiles.filter(tile => (tile.settlementId === settlement.id))}
-                            onUpgrade={onSettlementUpgrade}
+                            onClick={onSettlementUpdate}
                             onTileClick={this.handleTileClick}
                         />
                     ))}

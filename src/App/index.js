@@ -46,14 +46,18 @@ class App extends Component {
         });
     };
 
-    handleSettlementUpgrade = settlement => {
+    handleSettlementUpdate = settlement => {
         const settlements = this.state.settlements.slice();
-        const cityCount = settlements.filter(settlement => settlement.isCity).length;
-        if (cityCount === 4) {
+        const enableToggle = settlement.isCity ?
+            settlements.filter(settlement => !settlement.isCity).length < 5 :
+            settlements.filter(settlement => settlement.isCity).length < 4;
+
+        if (!enableToggle) {
             return;
         }
+
         const index = settlements.indexOf(settlement);
-        settlements[index].isCity = true;
+        settlements[index].isCity = !settlements[index].isCity;
 
         this.setState({ settlements });
     };
@@ -90,7 +94,7 @@ class App extends Component {
                                         settlements={settlements}
                                         tiles={tiles}
                                         onSettlementAdd={this.handleSettlementAdd}
-                                        onSettlementUpgrade={this.handleSettlementUpgrade}
+                                        onSettlementUpdate={this.handleSettlementUpdate}
                                         onTileUpdate={this.handleTileUpdate}
                                     />
                                 )}
