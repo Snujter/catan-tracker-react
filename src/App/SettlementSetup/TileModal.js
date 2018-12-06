@@ -4,6 +4,7 @@ import { availableTypes } from '../../immutables';
 
 import TileImage from '../components/TileImage';
 import NumberButtons from '../components/NumberButtons';
+import AppButton from '../components/AppButton';
 
 class TileModal extends Component {
     render() {
@@ -20,18 +21,16 @@ class TileModal extends Component {
                         disabledNumbers={[7]}
                     />
                     <div className="d-flex justify-content-center flex-wrap">
-                        {Object.keys(availableTypes).map(function(type) {
-                            let btnClasses = "tile m-1 ";
-                            btnClasses += (type === tile.type) ?
-                                "active" :
-                                "bg-light text-dark";
-
-                            return (
-                                <Button className={btnClasses} key={type} onClick={() => onUpdateType(type)}>
-                                    <TileImage type={type} height={70}/>
-                                </Button>
-                            );
-                        })}
+                        {Object.keys(availableTypes).map(type => (
+                            <AppButton
+                                key={type}
+                                className="tile m-1"
+                                isActive={type === tile.type}
+                                onClick={() => onUpdateType(type)}
+                            >
+                                <TileImage type={type} height={70}/>
+                            </AppButton>
+                        ))}
                     </div>
                 </ModalBody>
                 <ModalFooter className="d-flex justify-content-between">

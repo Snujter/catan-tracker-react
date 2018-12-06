@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import NumberButton from '../components/NumberButton';
 import { availableRolls } from '../../immutables';
+import AppButton from "./AppButton";
 
 class NumberButtons extends Component {
     render() {
@@ -8,21 +8,19 @@ class NumberButtons extends Component {
 
         return (
             <div className={className}>
-                {(numbers || availableRolls).map((number, i) => {
+                {(numbers || availableRolls).map(number => {
                     const isDisabled = disabledNumbers && disabledNumbers.indexOf(number) !== -1;
 
-                    const extraClasses = (number === selectedNumber) ?
-                        "active" :
-                        "bg-light text-dark";
-
                     return (
-                        <NumberButton
-                            key={i}
-                            number={number}
-                            extraClasses={extraClasses}
+                        <AppButton
+                            className="btn-round p-2 m-2"
+                            key={number}
                             isDisabled={isDisabled}
+                            isActive={number === selectedNumber}
                             onClick={() => onButtonClick && onButtonClick(number)}
-                        />
+                        >
+                            {number}
+                        </AppButton>
                     );
                 })}
             </div>
