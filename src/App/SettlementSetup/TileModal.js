@@ -15,7 +15,7 @@ class TileModal extends Component {
                 <ModalHeader toggle={toggle}>Change Tile</ModalHeader>
                 <ModalBody>
                     <NumberButtons
-                        className="d-flex justify-content-center flex-wrap mb-5"
+                        className="d-flex justify-content-center flex-wrap mb-3"
                         selectedNumber={tile.number}
                         onButtonClick={onUpdateNumber}
                         disabledNumbers={[7]}
