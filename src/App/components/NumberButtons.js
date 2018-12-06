@@ -13,10 +13,10 @@ class NumberButtons extends Component {
 
                     return (
                         <AppButton
-                            className="btn-round p-2 m-2"
                             key={number}
-                            isDisabled={isDisabled}
-                            isActive={number === selectedNumber}
+                            className="btn-round p-2 m-2"
+                            disabled={isDisabled}
+                            active={number === selectedNumber}
                             onClick={() => onButtonClick && onButtonClick(number)}
                         >
                             {number}

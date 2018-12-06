@@ -25,7 +25,7 @@ class TileModal extends Component {
                             <AppButton
                                 key={type}
                                 className="tile m-1"
-                                isActive={type === tile.type}
+                                active={type === tile.type}
                                 onClick={() => onUpdateType(type)}
                             >
                                 <TileImage type={type} height={70}/>
