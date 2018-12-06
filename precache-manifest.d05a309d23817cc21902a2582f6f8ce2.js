@@ -4,7 +4,7 @@ self.__precacheManifest = [
     "url": "/catan-tracker-react/static/media/field-hex.8c773516.png"
   },
   {
-    "revision": "fd5b5a34ed35974c9014",
+    "revision": "2eafa99442908476e0bb",
     "url": "/catan-tracker-react/static/css/main.effcd1dc.chunk.css"
   },
   {
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/catan-tracker-react/static/media/forest-hex.8725920d.png"
   },
   {
-    "revision": "fd5b5a34ed35974c9014",
-    "url": "/catan-tracker-react/static/js/main.fd5b5a34.chunk.js"
+    "revision": "2eafa99442908476e0bb",
+    "url": "/catan-tracker-react/static/js/main.2eafa994.chunk.js"
   },
   {
     "revision": "a45b3e02c794c3ff8b8e41c4b0221c16",
@@ -52,7 +52,7 @@ self.__precacheManifest = [
     "url": "/catan-tracker-react/static/css/1.a3619919.chunk.css"
   },
   {
-    "revision": "4d352a3307db2fd10bed3e7381502fe7",
+    "revision": "1676e3d2215bad688f8ca16d5be4d84a",
     "url": "/catan-tracker-react/index.html"
   }
 ];

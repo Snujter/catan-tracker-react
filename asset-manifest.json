@@ -1,7 +1,7 @@
 {
   "main.css": "/catan-tracker-react/static/css/main.effcd1dc.chunk.css",
-  "main.js": "/catan-tracker-react/static/js/main.fd5b5a34.chunk.js",
-  "main.js.map": "/catan-tracker-react/static/js/main.fd5b5a34.chunk.js.map",
+  "main.js": "/catan-tracker-react/static/js/main.2eafa994.chunk.js",
+  "main.js.map": "/catan-tracker-react/static/js/main.2eafa994.chunk.js.map",
   "static/css/1.a3619919.chunk.css": "/catan-tracker-react/static/css/1.a3619919.chunk.css",
   "static/js/1.9f097d15.chunk.js": "/catan-tracker-react/static/js/1.9f097d15.chunk.js",
   "static/js/1.9f097d15.chunk.js.map": "/catan-tracker-react/static/js/1.9f097d15.chunk.js.map",
@@ -18,6 +18,6 @@
   "static/css/main.effcd1dc.chunk.css.map": "/catan-tracker-react/static/css/main.effcd1dc.chunk.css.map",
   "static/css/1.a3619919.chunk.css.map": "/catan-tracker-react/static/css/1.a3619919.chunk.css.map",
   "index.html": "/catan-tracker-react/index.html",
-  "precache-manifest.d5ffa772c40c84403fce7ab91a637f64.js": "/catan-tracker-react/precache-manifest.d5ffa772c40c84403fce7ab91a637f64.js",
+  "precache-manifest.d05a309d23817cc21902a2582f6f8ce2.js": "/catan-tracker-react/precache-manifest.d05a309d23817cc21902a2582f6f8ce2.js",
   "service-worker.js": "/catan-tracker-react/service-worker.js"
 }
