@@ -17,13 +17,14 @@ class TileModal extends Component {
                         className="d-flex justify-content-center flex-wrap mb-5"
                         selectedNumber={tile.number}
                         onButtonClick={onUpdateNumber}
+                        disabledNumbers={[7]}
                     />
                     <div className="d-flex justify-content-center flex-wrap">
                         {Object.keys(availableTypes).map(function(type) {
-                            let btnClasses = "tile m-1";
+                            let btnClasses = "tile m-1 ";
                             btnClasses += (type === tile.type) ?
-                                " bg-dark text-light" :
-                                " bg-light text-dark";
+                                "active" :
+                                "bg-light text-dark";
 
                             return (
                                 <Button className={btnClasses} key={type} onClick={() => onUpdateType(type)}>

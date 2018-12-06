@@ -9,24 +9,18 @@ class NumberButtons extends Component {
         return (
             <div className={className}>
                 {(numbers || availableRolls).map((number, i) => {
-                    const isDisabled = disabledNumbers
-                        && disabledNumbers.length
-                        && disabledNumbers.indexOf(number) !== -1;
+                    const isDisabled = disabledNumbers && disabledNumbers.indexOf(number) !== -1;
 
-                    let extraClasses;
-                    if (isDisabled) {
-                        extraClasses = "disabled";
-                    } else if (number === selectedNumber) {
-                        extraClasses = "bg-dark text-light";
-                    } else {
-                        extraClasses = "bg-light text-dark";
-                    }
+                    const extraClasses = (number === selectedNumber) ?
+                        "active" :
+                        "bg-light text-dark";
 
                     return (
                         <NumberButton
                             key={i}
                             number={number}
                             extraClasses={extraClasses}
+                            isDisabled={isDisabled}
                             onClick={() => onButtonClick && onButtonClick(number)}
                         />
                     );
