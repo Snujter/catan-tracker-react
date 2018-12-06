@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 import { Alert } from 'reactstrap';
 
 import Settlement from './Settlement';
 import TileModal from './TileModal';
 
-library.add(faPlus)
+library.add(faPlusCircle)
 
 class SettlementSetup extends Component {
     state = {
@@ -26,7 +26,8 @@ class SettlementSetup extends Component {
 
         return (
             <FontAwesomeIcon
-                icon="plus"
+                className="mb-3"
+                icon="plus-circle"
                 size="2x"
                 onClick={() => onSettlementAdd()}
             />

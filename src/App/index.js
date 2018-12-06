@@ -1,13 +1,9 @@
 import React, {Component} from 'react';
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { Switch, Route, Redirect } from 'react-router-dom'
 
 import SettlementSetup from './SettlementSetup/index';
 import Chart from './Chart/index';
 import NavBar from './NavBar';
-
-library.add(faPlus)
 
 class App extends Component {
     state = {
