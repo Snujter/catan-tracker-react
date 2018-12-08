@@ -6,14 +6,25 @@ import Chart from './Chart/index';
 import NavBar from './NavBar';
 
 class App extends Component {
-    state = {
-        lastSettlementId: 0,
-        lastTileId: 0,
-        settlements: [],
-        tiles: [],
-        showTileModal: false,
-        activeTile: {},
-    };
+    constructor(props) {
+        super(props);
+        this.state = this.getInitialState();
+    }
+
+    getInitialState = () => {
+        return {
+            lastSettlementId: 0,
+            lastTileId: 0,
+            settlements: [],
+            tiles: [],
+            showTileModal: false,
+            activeTile: {},
+        };
+    }
+
+    resetState = () => {
+        this.setState(this.getInitialState());
+    }
 
     // @TODO - Fix bug where the chart screen doesn't update if the page was refreshed there
     // local storage
@@ -147,6 +158,7 @@ class App extends Component {
                                         onSettlementAdd={this.handleSettlementAdd}
                                         onSettlementUpdate={this.handleSettlementUpdate}
                                         onTileUpdate={this.handleTileUpdate}
+                                        onClearAll={this.resetState}
                                     />
                                 )}
                             />

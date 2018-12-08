@@ -6,6 +6,7 @@ import { Alert } from 'reactstrap';
 
 import Settlement from './Settlement';
 import TileModal from './TileModal';
+import AppButton from "../components/AppButton";
 
 library.add(faPlusCircle)
 
@@ -32,6 +33,16 @@ class SettlementSetup extends Component {
                 onClick={() => onSettlementAdd()}
             />
         );
+    }
+
+    getClearAllButton() {
+        const { settlements, onClearAll } = this.props;
+
+        if (!settlements || !settlements.length) {
+            return;
+        }
+
+        return <AppButton color="warning" onClick={onClearAll}>Clear All</AppButton>;
     }
 
     // tiles
@@ -98,6 +109,7 @@ class SettlementSetup extends Component {
                             onTileClick={this.handleTileClick}
                         />
                     ))}
+                    {this.getClearAllButton()}
                 </div>
             </React.Fragment>
         );
