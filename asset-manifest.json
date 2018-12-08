@@ -1,7 +1,7 @@
 {
   "main.css": "/catan-tracker-react/static/css/main.effcd1dc.chunk.css",
-  "main.js": "/catan-tracker-react/static/js/main.2eafa994.chunk.js",
-  "main.js.map": "/catan-tracker-react/static/js/main.2eafa994.chunk.js.map",
+  "main.js": "/catan-tracker-react/static/js/main.57053f21.chunk.js",
+  "main.js.map": "/catan-tracker-react/static/js/main.57053f21.chunk.js.map",
   "static/css/1.a3619919.chunk.css": "/catan-tracker-react/static/css/1.a3619919.chunk.css",
   "static/js/1.9f097d15.chunk.js": "/catan-tracker-react/static/js/1.9f097d15.chunk.js",
   "static/js/1.9f097d15.chunk.js.map": "/catan-tracker-react/static/js/1.9f097d15.chunk.js.map",
@@ -15,9 +15,9 @@
   "static/media/settlement.png": "/catan-tracker-react/static/media/settlement.694f53ee.png",
   "static/media/city.png": "/catan-tracker-react/static/media/city.26af67f7.png",
   "static/media/forest-hex.png": "/catan-tracker-react/static/media/forest-hex.8725920d.png",
-  "static/css/main.effcd1dc.chunk.css.map": "/catan-tracker-react/static/css/main.effcd1dc.chunk.css.map",
   "static/css/1.a3619919.chunk.css.map": "/catan-tracker-react/static/css/1.a3619919.chunk.css.map",
+  "static/css/main.effcd1dc.chunk.css.map": "/catan-tracker-react/static/css/main.effcd1dc.chunk.css.map",
   "index.html": "/catan-tracker-react/index.html",
-  "precache-manifest.d05a309d23817cc21902a2582f6f8ce2.js": "/catan-tracker-react/precache-manifest.d05a309d23817cc21902a2582f6f8ce2.js",
+  "precache-manifest.dff2a46b8c4a2ee5f2ba1a296aefacce.js": "/catan-tracker-react/precache-manifest.dff2a46b8c4a2ee5f2ba1a296aefacce.js",
   "service-worker.js": "/catan-tracker-react/service-worker.js"
 }
