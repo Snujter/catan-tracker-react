@@ -2,6 +2,10 @@ body {
     padding-top: 60px;
 }
 
+.navbar {
+    background-color: darkslategrey;
+}
+
 .tile {
     position: relative;
     display: block;
@@ -29,4 +33,11 @@ body {
 .btn:disabled {
     background-color: lightgrey;
     border: grey solid 1px;
+}
+
+.fa-arrow-alt-circle-down,
+.fa-arrow-alt-circle-up,
+.fa-plus-circle,
+.fa-times-circle {
+    color: darkslategrey;
 }
