@@ -22,18 +22,9 @@ class SettlementSetup extends Component {
         const { settlements, onSettlementAdd } = this.props;
 
         const settlementCount = settlements.filter(settlement => !settlement.isCity).length;
-        if (settlementCount === 5) {
-            return <Alert color="info">Max number of settlements reached</Alert>;
-        }
-
-        return (
-            <FontAwesomeIcon
-                className="mb-3"
-                icon="plus-circle"
-                size="2x"
-                onClick={() => onSettlementAdd()}
-            />
-        );
+        return settlementCount === 5 ?
+            <Alert color="info">Max number of settlements reached</Alert>  :
+            <FontAwesomeIcon icon="plus-circle" size="2x" onClick={() => onSettlementAdd()} />;
     }
 
     getClearAllButton() {
@@ -99,7 +90,7 @@ class SettlementSetup extends Component {
                     onSave={this.handleTileSave}
                     onClear={this.handleActiveTileClear}
                 />
-                <div>
+                <div className="mb-3">
                     {this.getAddButton()}
                 </div>
                 <div>
