@@ -3,7 +3,7 @@ import TileImage from '../components/TileImage';
 
 class Tile extends Component {
     render() {
-        const { type, number, onClick } = this.props;
+        const { type, number, onClick, imgHeight, className } = this.props;
         let numberDisplay;
         if (number) {
             numberDisplay = (
@@ -13,9 +13,14 @@ class Tile extends Component {
             );
         }
 
+        let classes = "tile";
+        if (className) {
+            classes += " " + className;
+        }
+
         return (
-            <div className="tile" onClick={onClick}>
-                <TileImage type={type}/>
+            <div className={classes} onClick={onClick}>
+                <TileImage type={type} height={imgHeight}/>
                 {numberDisplay}
             </div>
         );
