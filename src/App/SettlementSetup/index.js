@@ -43,7 +43,7 @@ class SettlementSetup extends Component {
             return;
         }
 
-        return <AppButton color="warning" onClick={onClearAll}>Clear All</AppButton>;
+        return <AppButton className="mb-3" color="warning" onClick={onClearAll}>Clear All</AppButton>;
     }
 
     // tiles
