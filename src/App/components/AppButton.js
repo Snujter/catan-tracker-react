@@ -3,10 +3,10 @@ import { Button } from 'reactstrap';
 
 class AppButton extends Component {
     render() {
-        const { children, color, disabled } = this.props;
+        const { children, color } = this.props;
 
         return (
-            <Button {...this.props} outline color={disabled ? "grey" : color || "secondary"}>
+            <Button {...this.props} outline color={color || "secondary"}>
                 {children}
             </Button>
         )
