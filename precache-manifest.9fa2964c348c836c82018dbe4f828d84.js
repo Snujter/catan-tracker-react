@@ -4,16 +4,16 @@ self.__precacheManifest = [
     "url": "/catan-tracker-react/static/media/field-hex.8c773516.png"
   },
   {
-    "revision": "e77323d970c225299f3b",
-    "url": "/catan-tracker-react/static/css/main.cbe37208.chunk.css"
+    "revision": "14908cf984963cc27b5d",
+    "url": "/catan-tracker-react/static/css/main.725cc80d.chunk.css"
   },
   {
     "revision": "68d7a430a4e0b35050f7f04a266382de",
     "url": "/catan-tracker-react/static/media/city.68d7a430.png"
   },
   {
-    "revision": "04d3e4490e5ce97b4d5e",
-    "url": "/catan-tracker-react/static/js/1.04d3e449.chunk.js"
+    "revision": "51e0f0f9f4c7b2a5164d",
+    "url": "/catan-tracker-react/static/js/1.51e0f0f9.chunk.js"
   },
   {
     "revision": "a0faadb6bc2ada00dc9c",
@@ -28,8 +28,8 @@ self.__precacheManifest = [
     "url": "/catan-tracker-react/static/media/forest-hex.8725920d.png"
   },
   {
-    "revision": "e77323d970c225299f3b",
-    "url": "/catan-tracker-react/static/js/main.e77323d9.chunk.js"
+    "revision": "14908cf984963cc27b5d",
+    "url": "/catan-tracker-react/static/js/main.14908cf9.chunk.js"
   },
   {
     "revision": "a45b3e02c794c3ff8b8e41c4b0221c16",
@@ -48,11 +48,11 @@ self.__precacheManifest = [
     "url": "/catan-tracker-react/static/media/settlement.b283507d.png"
   },
   {
-    "revision": "04d3e4490e5ce97b4d5e",
+    "revision": "51e0f0f9f4c7b2a5164d",
     "url": "/catan-tracker-react/static/css/1.a3619919.chunk.css"
   },
   {
-    "revision": "b956087442a4fd673332bcd3a4955a76",
+    "revision": "a5a2811ddbe11e03ed6b552c7d35929d",
     "url": "/catan-tracker-react/index.html"
   }
 ];

@@ -1,10 +1,10 @@
 {
-  "main.css": "/catan-tracker-react/static/css/main.cbe37208.chunk.css",
-  "main.js": "/catan-tracker-react/static/js/main.e77323d9.chunk.js",
-  "main.js.map": "/catan-tracker-react/static/js/main.e77323d9.chunk.js.map",
+  "main.css": "/catan-tracker-react/static/css/main.725cc80d.chunk.css",
+  "main.js": "/catan-tracker-react/static/js/main.14908cf9.chunk.js",
+  "main.js.map": "/catan-tracker-react/static/js/main.14908cf9.chunk.js.map",
   "static/css/1.a3619919.chunk.css": "/catan-tracker-react/static/css/1.a3619919.chunk.css",
-  "static/js/1.04d3e449.chunk.js": "/catan-tracker-react/static/js/1.04d3e449.chunk.js",
-  "static/js/1.04d3e449.chunk.js.map": "/catan-tracker-react/static/js/1.04d3e449.chunk.js.map",
+  "static/js/1.51e0f0f9.chunk.js": "/catan-tracker-react/static/js/1.51e0f0f9.chunk.js",
+  "static/js/1.51e0f0f9.chunk.js.map": "/catan-tracker-react/static/js/1.51e0f0f9.chunk.js.map",
   "runtime~main.js": "/catan-tracker-react/static/js/runtime~main.a0faadb6.js",
   "runtime~main.js.map": "/catan-tracker-react/static/js/runtime~main.a0faadb6.js.map",
   "static/media/brick-hex.png": "/catan-tracker-react/static/media/brick-hex.fab879f8.png",
@@ -15,9 +15,9 @@
   "static/media/settlement.png": "/catan-tracker-react/static/media/settlement.b283507d.png",
   "static/media/city.png": "/catan-tracker-react/static/media/city.68d7a430.png",
   "static/media/forest-hex.png": "/catan-tracker-react/static/media/forest-hex.8725920d.png",
-  "static/css/main.cbe37208.chunk.css.map": "/catan-tracker-react/static/css/main.cbe37208.chunk.css.map",
+  "static/css/main.725cc80d.chunk.css.map": "/catan-tracker-react/static/css/main.725cc80d.chunk.css.map",
   "static/css/1.a3619919.chunk.css.map": "/catan-tracker-react/static/css/1.a3619919.chunk.css.map",
   "index.html": "/catan-tracker-react/index.html",
-  "precache-manifest.3b59cdd1676805d4f740b794ea88dc68.js": "/catan-tracker-react/precache-manifest.3b59cdd1676805d4f740b794ea88dc68.js",
+  "precache-manifest.9fa2964c348c836c82018dbe4f828d84.js": "/catan-tracker-react/precache-manifest.9fa2964c348c836c82018dbe4f828d84.js",
   "service-worker.js": "/catan-tracker-react/service-worker.js"
 }

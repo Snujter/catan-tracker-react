@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/catan-tracker-react/precache-manifest.3b59cdd1676805d4f740b794ea88dc68.js"
+  "/catan-tracker-react/precache-manifest.9fa2964c348c836c82018dbe4f828d84.js"
 );
 
 workbox.clientsClaim();
