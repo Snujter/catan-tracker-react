@@ -124,6 +124,17 @@ class App extends Component {
         this.setState({ settlements });
     };
 
+    handleSettlementRemove = settlementId => {
+        const { settlements, tiles } = this.state;
+        const newSettlements = settlements.filter(settlement => settlement.id !== settlementId);
+        const newTiles = tiles.filter(tile => tile.settlementId !== settlementId);
+
+        this.setState({
+            settlements: newSettlements,
+            tiles: newTiles,
+        });
+    };
+
     // tiles
     handleTileUpdate = newTile => {
         if ((newTile.type && !newTile.number) || (!newTile.type && newTile.number)) {
@@ -157,6 +168,7 @@ class App extends Component {
                                         tiles={tiles}
                                         onSettlementAdd={this.handleSettlementAdd}
                                         onSettlementUpdate={this.handleSettlementUpdate}
+                                        onSettlementRemove={this.handleSettlementRemove}
                                         onTileUpdate={this.handleTileUpdate}
                                         onClearAll={this.resetState}
                                     />

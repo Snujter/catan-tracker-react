@@ -85,7 +85,7 @@ class SettlementSetup extends Component {
     };
 
     render() {
-        const { settlements, tiles, onSettlementUpdate } = this.props;
+        const { settlements, tiles, onSettlementUpdate, onSettlementRemove } = this.props;
         const { showTileModal, activeTile } = this.state;
 
         return (
@@ -119,7 +119,11 @@ class SettlementSetup extends Component {
                                                 />
                                             </div>
                                             <div className="col-6 text-right">
-                                                <FontAwesomeIcon icon="times" size="2x" />
+                                                <FontAwesomeIcon
+                                                    icon="times"
+                                                    size="2x"
+                                                    onClick={() => onSettlementRemove(settlement.id)}
+                                                />
                                             </div>
                                         </div>
                                     </CardHeader>
