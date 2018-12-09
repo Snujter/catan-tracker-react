@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlusCircle, faAngleDoubleUp, faAngleDoubleDown, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { faPlusCircle, faArrowAltCircleUp, faArrowAltCircleDown, faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import { Alert, Card, CardBody, CardText, CardHeader } from 'reactstrap';
 
 import Tile from './Tile';
@@ -9,7 +9,7 @@ import TileModal from './TileModal';
 import SettlementImage from "../components/SettlementImage";
 import AppButton from "../components/AppButton";
 
-library.add(faPlusCircle, faAngleDoubleUp, faAngleDoubleDown, faTimes)
+library.add(faPlusCircle, faArrowAltCircleUp, faArrowAltCircleDown, faTimesCircle)
 
 class SettlementSetup extends Component {
     state = {
@@ -104,14 +104,18 @@ class SettlementSetup extends Component {
                                         <div className="row no-gutters">
                                             <div className="col-6 text-left">
                                                 <FontAwesomeIcon
-                                                    icon={settlement.isCity ? "angle-double-down" : "angle-double-up"}
+                                                    icon={
+                                                        settlement.isCity ?
+                                                        "arrow-alt-circle-down" :
+                                                        "arrow-alt-circle-up"
+                                                    }
                                                     size="2x"
                                                     onClick={() => onSettlementUpdate(settlement)}
                                                 />
                                             </div>
                                             <div className="col-6 text-right">
                                                 <FontAwesomeIcon
-                                                    icon="times"
+                                                    icon="times-circle"
                                                     size="2x"
                                                     onClick={() => onSettlementRemove(settlement.id)}
                                                 />
