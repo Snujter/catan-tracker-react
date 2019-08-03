@@ -93,6 +93,7 @@ class SettlementSetup extends Component {
                 <div className="mb-3">
                     {this.getAddButton()}
                 </div>
+                <div className="hexagon"></div>
                 <div>
                     {settlements.map(settlement => {
                         const settlementTiles = tiles.filter(tile => (tile.settlementId === settlement.id));
